@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+			
+			
+        </nav>
+		
+			<div class="mobile-menu">
+			<div class="burger-menu" onclick="toggleMenu()">
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+			</div>
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="testimonials.html">Testimonials</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+    </header>
+<style>
+@media (max-width: 768px) {
+    .row {
+        flex-direction: column; /* Stack columns vertically */
+        gap: 0; /* Remove gap between stacked items */
+    }
+
+    .column {
+        gap: 20px; /* Add gap between stacked items */
+    }
+
+    .box, .large-box, .submit-btn {
+        width: 100%; /* Full width */
+		margin-bottom: 10px; /* Add margin between input boxes */
+    }
+	
+	
+</style> 
+    <div class="container">
+        <h1><span class="contact">Contact</span> <span class="me">Me</span></h1>
+        <form action="send_email.php" method="post">
+            <div class="row">
+                <div class="column">
+                    <input type="text" class="box" name="fullName" value="Full Name" data-placeholder="Full Name">
+                    <input type="email" class="box" name="email" value="Email" data-placeholder="Email">
+                    <input type="text" class="box" name="subject" value="Subject" data-placeholder="Subject">
+                </div>
+                <div class="column">
+                    <textarea class="large-box" name="message" data-placeholder="Full Message">Full Message</textarea>
+                    <button class="submit-btn" type="submit">Message Me</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script>
+	
+		function toggleMenu() {
+        const mobileNav = document.querySelector('.mobile-nav-links');
+        mobileNav.classList.toggle('active');
+    }
+	
+        document.addEventListener('DOMContentLoaded', function() {
+            const boxes = document.querySelectorAll('.box, .large-box');
+
+            boxes.forEach(box => {
+                box.addEventListener('focus', function() {
+                    if (this.value === this.dataset.placeholder) {
+                        this.value = '';
+                    }
+                });
+
+                box.addEventListener('blur', function() {
+                    if (this.value === '') {
+                        this.value = this.dataset.placeholder;
+                    }
+                });
+            });
+        });
+    </script>
+
+<footer>
+    <p class="footer-text">created by Ace designs</p>
+</footer>
+
+</body>
+</html>

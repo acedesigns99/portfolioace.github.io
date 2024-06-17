@@ -1,0 +1,609 @@
+body {
+    background-color: #231f20;
+	margin-left: 40px; /* Adjust the left margin */
+    margin-right: 40px; /* Adjust the right margin */
+    font-family: Arial, sans-serif;
+}
+
+header {
+    padding: 10px 20px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img {
+    height: 80px; /* Adjust height of logo as needed */
+	margin-right: 20px; /* Move the logo more to the right */
+}
+
+.logo:hover img {
+    box-shadow: 0 0 10px orange;
+}
+
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 40px; /* Increase space between menu items */
+}
+
+.nav-links a {
+    color: #FAF9F8;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.nav-links a:hover {
+    font-weight: bold;
+	color: #FF7F00; /* Orange color */
+}
+
+.nav-links a:active {
+    text-decoration: underline;
+	text-decoration-color: #FF7F00;
+}
+
+.mobile-menu {
+    display: flex;
+    justify-content: flex-end; /* Align menu to the right */
+    align-items: center; /* Center vertically */
+    padding: 10px 20px;
+    position: absolute;
+    top: 10px; /* Adjust top position as needed */
+    right: 10px; /* Adjust right position as needed */
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+.burger-menu {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.burger-bar {
+    width: 25px;
+    height: 3px;
+    background-color: #FAF9F8;
+    margin: 4px 0;
+}
+
+.mobile-nav-links {
+    list-style: none;
+    padding: 0;
+    background-color: #231f20;
+    text-align: center;
+    position: absolute;
+    top: 60px; /* Adjust top position relative to the header */
+    right: 0; /* Align to the right */
+    width: 200px; /* Adjust width as needed */
+    display: none;
+}
+
+.mobile-nav-links.active {
+    display: block;
+}
+
+.mobile-nav-links li {
+    margin: 10px 0;
+}
+
+.mobile-nav-links a {
+    color: #FAF9F8;
+    text-decoration: none;
+    font-size: 16px;
+    display: block;
+    padding: 15px 0;
+}
+
+@media (min-width: 769px) {
+    .mobile-menu {
+        display: none; /* Hide mobile menu on desktop */
+    }
+
+    .mobile-nav-links {
+        display: none; /* Hide mobile nav links on desktop */
+    }
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .mobile-menu {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 20px;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide nav links by default on mobile */
+        flex-direction: column; /* Stack links vertically */
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #231f20; /* Background color for mobile menu */
+        width: 100%; /* Full width */
+        padding: 10px 0;
+        text-align: center; /* Center align text */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+        z-index: 999; /* Ensure it's above other content */
+    }
+
+    .nav-links.active {
+        display: flex; /* Show links when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Adjust space between items */
+    }
+
+    .nav-links a {
+        padding: 15px 0; /* Adjust padding */
+        width: 100%; /* Full width for each link */
+        display: block; /* Display as block for full width */
+    }
+
+    .logo {
+        text-align: center; /* Center align logo */
+    }
+}
+
+
+
+.welcome-section {
+    margin-top: 20px; /* Adjust the margin-top as needed */
+}
+
+.welcome-section h1 {
+    color: #FAF9F8;
+    font-size: 36px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+    margin-bottom: -10px; /* Adjust the space between the headline and the paragraph */
+}
+
+.welcome-section .smaller-font {
+    color: #FAF9F8;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+    font-weight: normal;
+}
+
+
+
+
+/* Optional: Add cursor animation to simulate typing */
+
+
+@keyframes blink-caret {
+    from, to {
+        color: transparent;
+    }
+    50% {
+        color: #FAF9F8;
+    }
+}
+
+.round-button {
+    border-radius: 25px; /* Make it oval */
+    background-color: #FF7F00; /* Green background */
+    color: white; /* white text */
+	font-weight: 600;
+    padding: 5px 15px; /* Adjust padding */
+    font-size: 10px; /* Adjust font size */
+    text-align: center; /* Center text */
+    display: inline-block; /* Make it inline to align with the text */
+    margin-top: 30px; /* Adjust as needed */
+    cursor: pointer; /* Add pointer cursor */
+    border: none; /* Remove border */
+	animation: glow 1.5s ease-in-out infinite alternate; /* Glow animation */
+}
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #FF7F00, 0 0 20px #FF7F00, 0 0 30px #FF7F00; /* Initial glow effect */
+    }
+    100% {
+        box-shadow: 0 0 20px #FF7F00, 0 0 30px #FF7F00, 0 0 40px #FF7F00; /* Final glow effect */
+    }
+}
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 75px; /* Adjust the margin-top as needed */
+}
+
+.text-section {
+    flex: 1;
+    margin-right: 20px; /* Space between text and image */
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px; /* Optional: Add some rounding to the corners */
+}
+
+
+.heading-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.heading-container h1 {
+    font-size: 36px;
+}
+
+.heading-container .contact {
+    color: #FF7F00;
+}
+
+.heading-container .me {
+    color: #FAF9F8;
+}
+
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
+.contact {
+    color: white;
+}
+
+.me {
+    color: orange;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.column {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.box, .large-box {
+    border: 2px solid orange;
+    border-radius: 15px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial;
+    /* Center text vertically */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Ensure text doesn't wrap */
+    white-space: nowrap;
+}
+
+.box {
+    width: 200px;
+    height: 40px;
+    line-height: 40px; /* Adjust line-height to match height for vertical centering */
+}
+
+.large-box {
+    width: 450px;
+    height: 180px;
+    resize: none; /* Make the textarea non-resizable */
+    line-height: 180px; /* Adjust line-height to match height for vertical centering */
+}
+
+
+.box:focus, .large-box:focus {
+    outline: none;
+}
+
+.submit-btn {
+    margin-top: 10px;
+    padding: 10px 10px;
+    border: none;
+    background-color: orange;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(255, 165, 0, 0.2), 0 6px 20px rgba(255, 165, 0, 0.3);
+}
+
+.submit-btn:hover {
+    background-color: #ff7e00;
+}
+
+
+
+.services-page .cube-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1200px;
+    height: 100vh; /* Ensure the container takes full height of the viewport */
+}
+
+.services-page .cube {
+	width: 400px;
+	height: 400px;
+	position: relative;
+	transform-style: preserve-3d;
+	transform: translateZ(-200px);
+	transition: transform 1s;
+	}
+
+.services-page .cube-face {
+	position: absolute;
+	width: 400px;
+	height: 400px;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: 1px solid #ccc;
+	border-radius: 10px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	margin: 20px;
+	box-sizing: border-box; 
+}
+
+.services-page .cube-face h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: white;
+    text-decoration: underline;
+}
+
+.services-page .cube-face ul {
+    list-style-type: none;
+    padding: 0;
+    color: white;
+    font-size: 14px;
+    text-align: left;
+}
+
+.	
+services-page .cube-face ul li {
+    margin-bottom: 8px;
+}
+
+.services-page .cube-face:nth-child(1) {
+    transform: rotateY(0deg) translateZ(200px);
+}
+
+.services-page .cube-face:nth-child(2) {
+    transform: rotateY(90deg) translateZ(200px);
+}
+
+.services-page .cube-face:nth-child(3) {
+    transform: rotateY(180deg) translateZ(200px);
+}
+
+.services-page .cube-face:nth-child(4) {
+    transform: rotateY(-90deg) translateZ(200px);
+}
+
+.services-page .cube-face:nth-child(5) {
+    transform: rotateX(90deg) translateZ(200px);
+}
+
+.services-page .cube-face:nth-child(6) {
+    transform: rotateX(-90deg) translateZ(200px);
+}
+
+.services-page .navigation-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+.services-page .navigation-arrow.left {
+    left: 0;
+}
+
+.services-page .navigation-arrow.right {
+    right: 0;
+}
+
+.services-page .cube-container:hover .navigation-arrow {
+    display: block;
+}
+
+
+
+.testimonial {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: white; /* Changed to white color */
+}
+
+.testimonials-row {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.testimonial-box {
+    background-color: black; /* Changed to black background */
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    flex: 1;
+    min-width: 250px;
+    max-width: 30%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border: 2px solid orange; /* Added orange borders */
+    transition: all 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+.testimonial-box:hover {
+    box-shadow: 0 0 15px 5px orange; /* Orange glow on hover */
+    transform: scale(1.05); /* Slightly scale up the box to create a coming-to-front effect */
+}
+
+.testimonial-box h2,
+.testimonial-box .stars,
+.testimonial-box p {
+    color: white; /* Changed text color to white */
+}
+
+.testimonial-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.stars {
+    color: yellow;
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+p {
+    font-size: 16px;
+    color: #555;
+}
+
+footer {
+    text-align: center;
+    margin-top: 50px; /* Adjust the margin-top as needed */
+}
+
+.footer-text {
+    color: white;
+    font-size: 10px; /* Adjust the font size as needed */
+    font-family: arial; /* Set the font family to cursive */
+	font-style: italic; /* Set the font style to italic */
+}
+
+.about-section {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+	text-align: left; /* Align text to the left */
+}
+
+.about-section h2 {
+    font-size: 24px;
+    color: white;
+    margin-bottom: 20px;
+	text-align: center;
+}
+
+.about-section p {
+    font-size: 16px;
+    margin-bottom: 15px;
+	color: white;
+}
+
+.about-section .highlight-text {
+    font-weight: bold;
+    color: orange;
+}
+
+.about-section .services-list {
+    margin-top: 15px;
+	color: white;
+}
+
+.about-section .services-list ul {
+    list-style-type: disc;
+    padding-left: 20px;
+	color: white;
+}
+
+.about-section .services-list ul li {
+    margin-bottom: 5px;
+	color: white;
+}
+
+.about-section a {
+    color: #ff6600; /* Set link color to orange */
+    text-decoration: none; /* Remove underline */
+}
+
+.about-section .cta-button {
+    display: inline-block;
+    background-color: orange;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+	cursor: pointer; /* Add pointer cursor */
+    border: none; /* Remove border */
+	animation: glow 1.5s ease-in-out infinite alternate; /* Glow animation */
+}
+
+
+
+@keyframes glow {
+    0% {
+        box-shadow: 0 0 10px #FF7F00, 0 0 20px #FF7F00, 0 0 30px #FF7F00; /* Initial glow effect */
+    }
+    100% {
+        box-shadow: 0 0 20px #FF7F00, 0 0 30px #FF7F00, 0 0 40px #FF7F00; /* Final glow effect */
+    }
+}
+
+.about-section .cta-button:hover {
+    background-color: yellow;
+	color: orange; /* Change font color to black */
+	font-weight: bold;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .welcome-section {
+            margin-top: 100px; /* Adjust the margin-top as needed */
+        }
+
+        .welcome-section h1, .welcome-section .smaller-font {
+            color: #FAF9F8;
+            font-family: Arial, sans-serif;
+            font-weight: normal;
+            position: relative; /* Add this line */
+        }
+
+        @keyframes blink-caret {
+            from, to {
+                color: transparent;
+            }
+            50% {
+                color: #FAF9F8;
+            }
+        }
+
+        /* Hide text-section and image-section on mobile */
+        @media (max-width: 768px) {
+            .text-section {
+                display: none;
+            }
+
+            .image-section {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+			
+			
+        </nav>
+		
+			<div class="mobile-menu">
+			<div class="burger-menu" onclick="toggleMenu()">
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+			</div>
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="testimonials.html">Testimonials</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+    </header>
+    
+    <div class="welcome-section">
+        <div class="text-section">
+            <h1 id="headline"><span id="ace-designs"></span></h1>
+            <p id="paragraph" class="smaller-font"><span id="development-agency"></span> <span id="location"></span></p>
+            <p class="smaller-font" id="additional-text">
+                <span id="additional-text-content"></span>
+                <a href="contact.html">
+                    <button id="learn-more-button" class="round-button" style="display: none;">CONTACT</button>
+                </a>
+                <button id="learn-more-button" class="round-button" style="display: none;">LEARN MORE</button>
+            </p>
+        </div>
+    
+        <div class="image-section">
+            <img src="oranje_logo3.gif" alt="Image Description" id="right-image">
+            <img src="orange_logo.png" alt="Image Description" id="replacement-image" style="display: none;">
+        </div>
+    </div>
+
+    <div class="about-section">
+        <h2>Welcome to Our Web Development Services!</h2>
+        <p>At <span class="highlight-text">Ace Designs</span>, we are dedicated to transforming your digital presence with our comprehensive suite of web development solutions. Specializing in custom website development, responsive web design, and robust backend development, we create websites that not only impress visually but also deliver exceptional performance and user experience.</p>
+    
+        <div class="services-list">
+            <h3>Our Services Include:</h3>
+            <ul>
+                <li>Custom Website Development</li>
+                <li>Responsive Web Design</li>
+                <li>E-commerce Website Development</li>
+                <li>Content Management System Integration</li>
+                <li>Professionalism</li>
+                <li>Web Hosting, Domain Registration, SSL Certificates</li>
+                <li>Detailed Analytics Reporting</li>
+				<li>Affordable</li>
+                <li>User-friendly</li>
+                <li>SEO-optimization</li>
+            </ul>
+        </div>
+    
+        <p>Whether you're launching a new venture or seeking to enhance your online presence, <span class="highlight-text">Ace Designs</span> is your trusted partner in achieving digital success. Contact us today to explore how we can help you achieve your business objectives through tailored web development and digital marketing solutions.</p>
+    
+        <a href="contact.html" class="cta-button">Contact Us Today</a>
+    </div>
+
+    <script>
+	    function toggleMenu() {
+        const mobileNav = document.querySelector('.mobile-nav-links');
+        mobileNav.classList.toggle('active');
+    }
+	
+        // JavaScript code for the typewriter effect
+        const headlines = [
+            "Custom Website Development",
+            "Responsive Web Design",
+            "E-commerce Website Development",
+            "Content Management System Integration",
+            "Professionalism",
+            "Affordable",
+            "User-friendly",
+            "SEO-optimization",
+            "Web Hosting, Domain Registration, SSL Certificates",
+            "Detailed Analytics Reporting"
+        ];
+
+        let headlineIndex = 0;
+        let charIndex = 0;
+        let currentHeadline = headlines[headlineIndex];
+
+        function typeHeadline() {
+            if (charIndex < currentHeadline.length) {
+                document.getElementById("ace-designs").innerHTML += currentHeadline.charAt(charIndex);
+                charIndex++;
+                setTimeout(typeHeadline, 60); // Adjust typing speed here
+            } else {
+                // Pause before starting to delete
+                setTimeout(deleteHeadline, 1000); // Adjust pause time here
+            }
+        }
+
+        function deleteHeadline() {
+            if (charIndex > 0) {
+                document.getElementById("ace-designs").innerHTML = currentHeadline.substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(deleteHeadline, 30); // Adjust deleting speed here
+            } else {
+                // Move to the next headline
+                headlineIndex = (headlineIndex + 1) % headlines.length;
+                currentHeadline = headlines[headlineIndex];
+                setTimeout(typeHeadline, 500); // Adjust pause time before typing new headline
+            }
+        }
+
+        // Start the typewriter effect
+        typeHeadline();
+
+        // Get references to the GIF and the replacement image
+        const gif = document.getElementById("right-image");
+        const replacementImage = document.getElementById("replacement-image");
+
+        // Wait for the GIF to play once
+        setTimeout(function() {
+            // Hide the GIF and display the replacement image
+            gif.style.display = "none";
+            replacementImage.style.display = "block";
+        }, 1800); // Assuming the GIF duration is 1.8 seconds (1800 milliseconds)
+    </script>
+
+    <footer>
+        <p class="footer-text">created by Ace designs</p>
+    </footer>
+
+</body>
+</html>

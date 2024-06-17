@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+			
+			
+        </nav>
+		
+			<div class="mobile-menu">
+			<div class="burger-menu" onclick="toggleMenu()">
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+				<div class="burger-bar"></div>
+			</div>
+			<ul class="mobile-nav-links">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="services.html">Services</a></li>
+				<li><a href="testimonials.html">Testimonials</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+		</div>
+    </header>
+
+    <div class="testimonial">
+        <h1>Testimonials</h1>
+        <div class="testimonials-row">
+            <div class="testimonial-box">
+				<img src="testimonial2.jpg" alt="Person 1" class="testimonial-img">
+                <h2>Isabella Scott</h2>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"Working with Ace Designs was a game-changer for us. From the initial consultation to the final launch, their team demonstrated professionalism, expertise, and a genuine passion for web design. They took the time to understand our unique needs and created a website that perfectly captures our brand's essence. The feedback from our customers has been overwhelmingly positive, and we've seen a noticeable improvement in our online sales and lead generation. If you want a website that stands out and drives results, look no further than Ace Designs."</p>
+            </div>
+            <div class="testimonial-box">
+				<img src="testimonial1.jpg" alt="Person 1" class="testimonial-img">
+                <h2>Diego Herrera</h2>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"When we decided to revamp our website, we knew we needed a partner who could bring our vision to life with creativity and precision. The team at Ace Designs exceeded our expectations in every way. Their attention to detail, innovative design concepts, and seamless integration of our brand identity resulted in a website that not only looks stunning but also provides an exceptional user experience. Our traffic and engagement have increased significantly since the launch. I highly recommend Ace Designs to any business looking to enhance their online presence."</p>
+            </div>
+            <div class="testimonial-box">
+				<img src="testimonial3.jpg" alt="Person 1" class="testimonial-img">
+                <h2>Emily Thompson</h2>
+                <div class="stars">
+                    ★★★★★
+                </div>
+                <p>"As a small business owner, I was looking for a web design company that could offer personalized service and deliver a high-quality product within my budget. Ace Designs delivered on all fronts. Their team was responsive, knowledgeable, and always willing to go the extra mile to ensure I was satisfied with the final result. The new website is not only visually appealing but also user-friendly and optimized for search engines. I've received numerous compliments from my clients, and my business has seen a substantial increase in online inquiries. I couldn't be happier with my decision to work with Ace Designs."</p>
+            </div>
+        </div>
+    </div>
+	
+	<style>
+	@media (max-width: 768px) { /* Adjust max-width as per your mobile design needs */
+    .testimonials-row {
+        justify-content: center; /* Center align testimonials on mobile */
+    }
+    
+    .testimonial-box {
+        max-width: 90%; /* Adjust width for better mobile view */
+    }
+	</style>
+	
+    <script>
+	    function toggleMenu() {
+        const mobileNav = document.querySelector('.mobile-nav-links');
+        mobileNav.classList.toggle('active');
+    }
+	</script>
+
+<footer>
+    <p class="footer-text">created by Ace designs</p>
+</footer>
+
+</body>
+</html>

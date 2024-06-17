@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="services-page">
+    <header>
+        <nav>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="logo.png" alt="Logo">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <div class="burger-menu" onclick="toggleMenu()">
+                    <div class="burger-bar"></div>
+                    <div class="burger-bar"></div>
+                    <div class="burger-bar"></div>
+                </div>
+                <ul class="mobile-nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="testimonials.html">Testimonials</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+	<style>
+@media (max-width: 768px) {
+    .services-page .cube {
+        width: 250px; /* Adjust width for smaller screens */
+        height: 250px; /* Adjust height accordingly */
+        transform: scale(0.8); /* Scale down the cube to fit on smaller screens */
+    }
+
+    .services-page .cube-face {
+        width: 100%; /* Take full width of the cube face */
+        height: 100%; /* Take full height of the cube face */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .services-page .cube-face h2 {
+        font-size: 16px; /* Adjust heading font size */
+    }
+
+    .services-page .cube-face ul {
+        font-size: 12px; /* Adjust list item font size */
+    }
+
+    .services-page .cube-face:nth-child(1) {
+        transform: translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+    .services-page .cube-face:nth-child(2) {
+        transform: rotateY(90deg) translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+    .services-page .cube-face:nth-child(3) {
+        transform: rotateY(180deg) translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+    .services-page .cube-face:nth-child(4) {
+        transform: rotateY(-90deg) translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+    .services-page .cube-face:nth-child(5) {
+        transform: rotateX(90deg) translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+    .services-page .cube-face:nth-child(6) {
+        transform: rotateX(-90deg) translateZ(125px); /* Adjust translateZ for smaller cube size */
+    }
+
+	</style>
+
+    <div class="cube-container">
+        <div class="cube" id="cube">
+            <div class="cube-face" id="face-1">
+                <h2>Web Development Services</h2>
+                <ul>
+                    <li>Custom Website Development</li>
+                    <li>Frontend Development</li>
+                    <li>Backend Development</li>
+                    <li>Responsive Web Design</li>
+                    <li>E-commerce Website Development</li>
+                    <li>Content Management System (CMS) Integration</li>
+                    <li>Website Maintenance and Support</li>
+                    <li>Website Redesign and Updates</li>
+                    <li>Website Optimization for Performance and SEO</li>
+                </ul>
+            </div>
+            <div class="cube-face" id="face-2">
+                <h2>Design Services</h2>
+                <ul>
+                    <li>Logo Design</li>
+                    <li>Brand Identity Design</li>
+                    <li>Graphic Design</li>
+                    <li>User Interface (UI) Design</li>
+                    <li>User Experience (UX) Design</li>
+                    <li>Wireframing and Prototyping</li>
+                    <li>Print Design (Brochures, Flyers, Business Cards)</li>
+                    <li>Social Media Graphics</li>
+                </ul>
+            </div>
+            <div class="cube-face" id="face-3">
+                <h2>Animation Services</h2>
+                <ul>
+                    <li>Frame-by-Frame Animation</li>
+                    <li>2D Animation</li>
+                    <li>Motion Graphics</li>
+                    <li>Animated Explainer Videos</li>
+                    <li>Character Animation</li>
+                    <li>Storyboarding</li>
+                    <li>Animated GIFs</li>
+                    <li>Logo Animation</li>
+                </ul>
+            </div>
+            <div class="cube-face" id="face-4">
+                <h2>Digital Marketing Services</h2>
+                <ul>
+                    <li>Search Engine Optimization (SEO)</li>
+                    <li>Social Media Marketing (SMM)</li>
+                    <li>Pay-per-Click (PPC) Advertising</li>
+                    <li>Content Marketing</li>
+                    <li>Email Marketing</li>
+                    <li>Conversion Rate Optimization (CRO)</li>
+                    <li>Online Reputation Management (ORM)</li>
+                </ul>
+            </div>
+            <div class="cube-face" id="face-5">
+                <h2>Content Management Services</h2>
+                <ul>
+                    <li>Content Strategy and Planning</li>
+                    <li>Content Creation (Copywriting, Blog Writing, etc.)</li>
+                    <li>Content Editing and Proofreading</li>
+                    <li>Content Publishing and Distribution</li>
+                    <li>Content Audits and Analysis</li>
+                </ul>
+            </div>
+            <div class="cube-face" id="face-6">
+                <h2>Additional Services</h2>
+                <ul>
+                    <li>Web Hosting and Domain Registration</li>
+                    <li>Website Security and SSL Certificates</li>
+                    <li>Website Analytics and Reporting</li>
+                    <li>Custom Web Application Development</li>
+                    <li>Mobile App Development</li>
+                    <li>Augmented Reality (AR) and Virtual Reality (VR) Development</li>
+                </ul>
+            </div>
+        </div>
+        <div class="navigation-arrow left" onclick="rotateCube('left')">&#9664;</div>
+        <div class="navigation-arrow right" onclick="rotateCube('right')">&#9654;</div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const mobileNav = document.querySelector('.mobile-nav-links');
+            mobileNav.classList.toggle('active');
+        }
+
+        let currentFace = 1;
+
+        function rotateCube(direction) {
+            const cube = document.getElementById('cube');
+            if (direction === 'right') {
+                currentFace = currentFace < 6 ? currentFace + 1 : 1;
+            } else if (direction === 'left') {
+                currentFace = currentFace > 1 ? currentFace - 1 : 6;
+            }
+            const angle = (currentFace - 1) * -90;
+            cube.style.transform = `translateZ(-200px) rotateY(${angle}deg)`;
+        }
+    </script>
+
+    <footer>
+        <p class="footer-text">created by Ace designs</p>
+    </footer>
+</body>
+</html>

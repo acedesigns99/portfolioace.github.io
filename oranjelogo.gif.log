@@ -1,0 +1,22 @@
+C:/Program Files/Krita (x64)/bin/ffmpeg.exe -hide_banner -y -y -r 19 -start_number 0 -start_number_range 1 -i C:/Users/arrob/Documents/website/frame%04d.png -i C:/Users/arrob/Documents/website/KritaTempPalettegen_%06d.png -lavfi [0:v][1:v]paletteuse=dither=sierra2_4a:diff_mode=none -f gif -loop 0 -gifflags +transdiff C:/Users/arrob/Documents/website/oranjelogo.gif
+=====================================================
+Input #0, image2, from 'C:/Users/arrob/Documents/website/frame%04d.png':
+  Duration: 00:00:05.24, start: 0.000000, bitrate: N/A
+  Stream #0:0: Video: png, rgba(pc), 669x373 [SAR 2834:2834 DAR 669:373], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Input #1, image2, from 'C:/Users/arrob/Documents/website/KritaTempPalettegen_%06d.png':
+  Duration: 00:00:00.04, start: 0.000000, bitrate: N/A
+  Stream #1:0: Video: png, rgba(pc), 16x16 [SAR 1:1 DAR 1:1], 25 fps, 25 tbr, 25 tbn, 25 tbc
+Stream mapping:
+  Stream #0:0 (png) -> paletteuse:default
+  Stream #1:0 (png) -> paletteuse:palette
+  paletteuse -> Stream #0:0 (gif)
+Press [q] to stop, [?] for help
+[image2 @ 000001f9bc48a300] Thread message queue blocking; consider raising the thread_queue_size option (current value: 8)
+Output #0, gif, to 'C:/Users/arrob/Documents/website/oranjelogo.gif':
+  Metadata:
+    encoder         : Lavf58.76.100
+  Stream #0:0: Video: gif, pal8(pc, gbr/unknown/unknown, progressive), 669x373 [SAR 1:1 DAR 669:373], q=2-31, 200 kb/s, 19 fps, 100 tbn (default)
+    Metadata:
+      encoder         : Lavc58.134.100 gif
+frame=    1 fps=0.0 q=-0.0 size=       0kB time=00:00:00.01 bitrate=   0.0kbits/s speed=0.258x    frame=   28 fps=0.0 q=-0.0 size=      55kB time=00:00:01.43 bitrate= 315.7kbits/s speed=2.62x    frame=   55 fps= 52 q=-0.0 size=     135kB time=00:00:02.85 bitrate= 387.8kbits/s speed=2.72x    frame=   78 fps= 50 q=-0.0 size=     225kB time=00:00:04.06 bitrate= 453.2kbits/s speed= 2.6x    frame=  105 fps= 51 q=-0.0 size=     256kB time=00:00:05.48 bitrate= 382.7kbits/s speed=2.65x    frame=  130 fps= 51 q=-0.0 size=     256kB time=00:00:06.80 bitrate= 308.4kbits/s speed=2.65x    frame=  131 fps= 50 q=-0.0 Lsize=     518kB time=00:00:06.85 bitrate= 619.6kbits/s speed=2.62x    
+video:518kB audio:0kB subtitle:0kB other streams:0kB global headers:0kB muxing overhead: 0.003770%
